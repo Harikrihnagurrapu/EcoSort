@@ -79,7 +79,7 @@ class _WasteSegregationPageState extends State<WasteSegregationPage> {
     return null;
   }
 
- // Classify waste type based on image
+  // Classify waste type based on image
   Future<void> _classifyWasteType() async {
     if (_image != null || _webImage != null) {
       var output;
@@ -105,7 +105,7 @@ class _WasteSegregationPageState extends State<WasteSegregationPage> {
               numResults: 8, // Number of classes (adjust based on model)
               threshold: 0.5, // Confidence threshold
             );
-          // ignore: unnecessary_null_comparison
+            // ignore: unnecessary_null_comparison
           } else if (kIsWeb && resizedImage != null) {
             // For web: Use bytes-based classification
             output = await Tflite.runModelOnBinary(
@@ -142,7 +142,6 @@ class _WasteSegregationPageState extends State<WasteSegregationPage> {
     }
   }
 
-
   // Handle re-uploading or replacing image
   void _reuploadImage() {
     setState(() {
@@ -158,7 +157,7 @@ class _WasteSegregationPageState extends State<WasteSegregationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(),
       body: SingleChildScrollView(
         child: _buildContentPage(
           Column(
